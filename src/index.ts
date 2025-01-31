@@ -1,6 +1,4 @@
-import * as SuperHero from './classes/Hero';
-import powers from './data/power';
+import { printObject, genericfunction } from './generics/generics';
 
-const ironman = new SuperHero.Hero('Ironman', 1, 32);
-console.log(ironman.power);
-console.log(powers);
+console.log(genericfunction(3.1416).toFixed(2));
+// console.log(genericfunction(new Date()).toFixed(2));
