@@ -1,4 +1,5 @@
-import { printObject, genericfunction } from './generics/generics';
+import { getPokemon } from './generics/get-pokemons';
 
-console.log(genericfunction(3.1416).toFixed(2));
-console.log(genericfunction(new Date()).getDate());
+getPokemon('pikachu')
+	.then((res) => console.log(res.sprites))
+	.catch((err) => console.error(err));
