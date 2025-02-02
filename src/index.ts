@@ -1,5 +1,4 @@
-import { getPokemon } from './generics/get-pokemons';
+import { Pokemon } from './decorators/pokemon-class';
 
-getPokemon('pikachu')
-	.then((res) => console.log(res.sprites))
-	.catch((err) => console.error(err));
+const charmander = new Pokemon('Charmander');
+console.log(charmander);
