@@ -34,9 +34,30 @@ function CheckValidPokemonId() {
 	};
 }
 
+function readOnly(isWritable: boolean = true): Function {
+	return function (target: any, propertyKey: string) {
+		const descriptor: PropertyDescriptor = {
+			get() {
+				console.log(this);
+				return 'Fernando';
+			},
+			set(this, value) {
+				// console.log(this, value);
+				Object.defineProperty(this, propertyKey, {
+					value,
+					writable: !isWritable,
+					enumerable: false,
+				});
+			},
+		};
+		return descriptor;
+	};
+}
+
 @bloquearPrototipo
 @printToConsoleConditional(false)
 export class Pokemon {
+	@readOnly()
 	public publicApi: string = `https://pokeapi.co`;
 	constructor(public name: string) {}
 
