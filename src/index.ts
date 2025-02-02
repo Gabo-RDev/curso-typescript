@@ -4,5 +4,8 @@ const charmander = new Pokemon('Charmander');
 
 // (Pokemon.prototype as any).customName = 'Pikachu'; // object is not extensible
 
+// console.log(charmander);
+// charmander.savePokemonToDB(900);
+
+charmander.publicApi = 'https://fernando-herrera.com';
 console.log(charmander);
-charmander.savePokemonToDB(900);
